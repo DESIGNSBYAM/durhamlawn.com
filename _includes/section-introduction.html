@@ -1,0 +1,117 @@
+    <!-- Introduction -->
+    <section id="about">
+      <div class="container pb-40">
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-8">
+              <h2 class="title-pattern mt-0 mb-30">
+              {% if include.title %}
+              {{ include.title }}
+              {% else %}
+              <span>Quick <span class="text-theme-colored">Introduction</span></span>
+              {% endif %}
+              </h2>
+              <p>Established in 2015, Durham Lawn Care sought to bring a much needed, caring touch to the lawn maintenance industry in the Ark-La-Tex. The founder, Dustin Durham, decided Texarkana was the best place as it was centrally located. He has swept the area showing his care and dedication to his work. Whether it's landscaping or a weekly lawn maintenance job, the Durham Lawn care team shows up to impress with their honed skills.</p>
+              <p>Allow us to show you, with confidence, the Durham Lawn Care motto.</p>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="icon-box mt-20"> <a class="icon icon-flat icon-border-effect effect-flat icon-md" href="#"> <i class="fontello-trolley-1 text-theme-colored font-48"></i> </a>
+                    <h5 class="Personal trainer text-uppercase mt-0"><a href="#"><strong>Excellent Services</strong></a></h5>
+                    <p>We aim to provide the services that our clientele requires and to do it at the highest quality.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="icon-box mt-20"> <a class="icon icon-flat icon-border-effect effect-flat icon-md" href="#"> <i class="fontello-people-3 text-theme-colored font-48"></i> </a>
+                    <h5 class="Personal trainer text-uppercase mt-0"><a href="#"><strong>Year Round Maintenance</strong></a></h5>
+                    <p>Your yard should look immaculant 52 weeks a year.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="icon-box mt-20"> <a class="icon icon-border-effect effect-flat icon-md" href="#"> <i class="fontello-nature-32 font-48 text-theme-colored"></i> </a>
+                    <h5 class="Personal trainer text-uppercase mt-0"><a href="#"><strong>Quality and Reliability</strong></a></h5>
+                    <p>We hire the best workers and utilize the best equipment so we can provide reliability to our customers.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h3 class="title-pattern mt-0 mb-40"><span>Get Your <span class="text-theme-colored">Project Started</span></span></h3>
+              <form id="getaquote_form" name="getaquote_form" class="form-transparent mt-20" method="post" action="includes/getaquote.php">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group mb-10">
+                      <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Name" aria-required="true">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group mb-10">
+                      <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email" aria-required="true">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group mb-10">
+                      <input name="form_phone" class="form-control" type="tel" placeholder="Enter Phone" aria-required="true">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group mb-10">
+                      <input name="form_date" class="form-control required datetime-picker" type="text" placeholder="Booking Date & Time" aria-required="true">
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group mb-10">
+                      <div class="styled-select">
+                        <select id="booking_service" name="booking_service" class="form-control" required="">
+                          <option value=""> --- Choose Service --- </option>
+                          <option value="Lawn Maintenance">Lawn Care &amp; Maintenance</option>
+                          <option value="Pruning Shrubs">Pruning Shrubs &amp; Bushes</option>
+                          <option value="Sod Installation">Sod &amp; Turf Installation</option>
+                          <option value="Power Washing">Power Washing</option>
+                          <option value="Landscaping">Flower Bed Installation &amp; Landscaping</option>
+                          <option value="Mulch &amp; Gravel">Mulch &amp; Gravel Laying</option>
+                          <option value="Fall Cleanup">Fall Leaf Cleanup</option>
+                          <option value="Relocation">Plant Relocation</option>
+                          <option value="Relocation">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mb-10">
+                  <textarea id="form_message" name="form_message" class="form-control required"  placeholder="Enter Message" rows="5" aria-required="true"></textarea>
+                </div>
+                <div class="form-group mb-0 mt-20">
+                  <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                  <button type="submit" class="btn btn-dark btn-theme-colored text-uppercase" data-loading-text="Please wait...">Send Message</button>
+                </div>
+              </form>
+              <!-- Get Your Project Started Form Validation-->
+              <script type="text/javascript">
+                $("#getaquote_form").validate({
+                  submitHandler: function(form) {
+                    var form_btn = $(form).find('button[type="submit"]');
+                    var form_result_div = '#form-result';
+                    $(form_result_div).remove();
+                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                    var form_btn_old_msg = form_btn.html();
+                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                    $(form).ajaxSubmit({
+                      dataType:  'json',
+                      success: function(data) {
+                        if( data.status == 'true' ) {
+                          $(form).find('.form-control').val('');
+                        }
+                        form_btn.prop('disabled', false).html(form_btn_old_msg);
+                        $(form_result_div).html(data.message).fadeIn('slow');
+                        setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                      }
+                    });
+                  }
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

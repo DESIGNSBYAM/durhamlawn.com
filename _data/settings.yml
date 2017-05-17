@@ -1,0 +1,17 @@
+# Site settings
+title: Durham Lawn Care Services
+short_title: Durham Lawn Care
+description: > # this means to ignore newlines until "baseurl:"
+  Premium lawn care and landscaping business for the Texarkana area.
+baseurl: # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site
+
+# Contact Info
+email: contact@durhamlawn.com
+phone: 9034902992
+phone_formatted: (903) 490-2992
+hours: "Mon-Fri 8:00 to 5:00"
+
+# Social
+facebook_url: https://www.facebook.com/DurhamLawn
+

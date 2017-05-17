@@ -1,0 +1,177 @@
+  <!-- Footer -->
+  <footer id="footer" class="bg-black-222">
+    <div class="container pt-70 pb-30">
+      <div class="row border-bottom-black">
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark">
+            <img class="mb-20" alt="" src="images/logo-wide-white.png">
+            <p>{{ site.data.settings.description }}</p>
+            <p>Texarkana, TX</p>
+            <ul class="list-inline mt-5">
+              <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray" href="tel:{{ site.data.settings.phone }}">{{ site.data.settings.phone_formatted }}</a> </li>
+              <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a class="text-gray" href="mailto:{{ site.data.settings.email }}">{{ site.data.settings.email }}</a> </li>
+              <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray" href="http://durhamlawn.com">www.durhamlawn.com</a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark">
+            <h5 class="widget-title line-bottom">Useful Links</h5>
+            <ul class="list angle-double-right list-border">
+              <li><a href="#">Body Building</a></li>
+              <li><a href="#">Fitness Classes</a></li>
+              <li><a href="#">Weight lifting</a></li>
+              <li><a href="#">Yoga Courses</a></li>
+              <li><a href="#">Training</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark">
+            <h5 class="widget-title line-bottom">Twitter Feed</h5>
+            <div class="twitter-feed list-border clearfix" data-username="Envato" data-count="2"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark">
+            <h5 class="widget-title line-bottom">Latest News</h5>
+            <div class="latest-posts">
+              <article class="post media-post clearfix pb-0 mb-10">
+                <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
+                <div class="post-right">
+                  <h5 class="post-title mt-0 mb-5"><a href="#">Sustainable Construction Example</a></h5>
+                  <p class="post-date mb-0 font-12">Apr 28, 2017</p>
+                </div>
+              </article>
+              <article class="post media-post clearfix pb-0 mb-10">
+                <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
+                <div class="post-right">
+                  <h5 class="post-title mt-0 mb-5"><a href="#">Industrial Coatings Example</a></h5>
+                  <p class="post-date mb-0 font-12">Apr 28, 2017</p>
+                </div>
+              </article>
+              <article class="post media-post clearfix pb-0 mb-10">
+                <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
+                <div class="post-right">
+                  <h5 class="post-title mt-0 mb-5"><a href="#">Storefront Installations Example</a></h5>
+                  <p class="post-date mb-0 font-12">Apr 28, 2017</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-30">
+        <div class="col-md-5">
+          <div class="widget dark">
+            <h5 class="widget-title mb-10">Subscribe To Us</h5>
+            <!-- Mailchimp Subscription Form Starts Here -->
+            <form id="mailchimp-subscription-form-footer" class="newsletter-form">
+              <div class="input-group">
+                <input type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer" style="height: 45px;">
+                <span class="input-group-btn">
+                  <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit">Subscribe</button>
+                </span>
+              </div>
+            </form>
+            <!-- Mailchimp Subscription Form Validation-->
+            <script type="text/javascript">
+              $('#mailchimp-subscription-form-footer').ajaxChimp({
+                  callback: mailChimpCallBack,
+                  url: '//test'
+              });
+
+              function mailChimpCallBack(resp) {
+                  // Hide any previous response text
+                  var $mailchimpform = $('#mailchimp-subscription-form-footer'),
+                      $response = '';
+                  $mailchimpform.children(".alert").remove();
+                  if (resp.result === 'success') {
+                      $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                  } else if (resp.result === 'error') {
+                      $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                  }
+                  $mailchimpform.prepend($response);
+              }
+            </script>
+            <!-- Mailchimp Subscription Form Ends Here -->
+          </div>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+          <div class="widget dark">
+            <h5 class="widget-title mb-10">Call Us Now</h5>
+            <div class="text-gray">
+              <a href="tel:{{ site.data.settings.phone }}">{{ site.data.settings.phone_formatted }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="widget dark">
+            <h5 class="widget-title mb-10">Connect With Us</h5>
+            <ul class="styled-icons icon-dark icon-circled icon-sm">
+              <li><a href="{{ site.data.settings.facebook_url }}"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom bg-black-333">
+      <div class="container pt-20 pb-20">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="font-11 text-black-777 m-0">Copyright &copy;2017 Sorzery Web Solutions. All Rights Reserved</p>
+          </div>
+          <div class="col-md-6 text-right">
+            <div class="widget no-border m-0">
+              <ul class="list-inline sm-text-center mt-5 font-12">
+                <li>
+                  <a href="http://sorzery.com">Get your site magically made</a>
+                </li>
+                <li>|</li>
+                <li>
+                  <a href="http://sorzery.com">More info</a>
+                </li>
+                <li>|</li>
+                <li>
+                  <a href="http://sorzery.com">Support</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- end wrapper --> 
+
+<!-- Footer Scripts --> 
+<!-- JS | Custom script for all pages --> 
+<script src="js/custom.js"></script>
+
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+      (Load Extensions only on Local File Systems ! 
+       The following part can be removed on Server for On Demand Loading) --> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script> 
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-98480649-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
